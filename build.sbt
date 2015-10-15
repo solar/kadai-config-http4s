@@ -1,6 +1,6 @@
 name := "kadai-config-http4s"
 organization := "org.sazabi"
-version := "0.0.1-SNAPSHOT"
+version := "0.0.2-SNAPSHOT"
 
 scalaVersion := "2.11.7"
 crossScalaVersions := Seq(scalaVersion.value, "2.10.5")
@@ -14,13 +14,13 @@ scalacOptions ++= Seq(
   "-language:implicitConversions")
 
 libraryDependencies ++= Seq(
-  "io.atlassian" %% "kadai-config" % "3.3.4",
-  "org.http4s" %% "http4s-core" % "0.8.4",
-  "com.github.scalaprops" %% "scalaprops" % "0.1.12" % "test")
+  "io.atlassian" %% "kadai-config" % "4.0.1",
+  "org.http4s" %% "http4s-core" % "0.10.1",
+  "com.github.scalaprops" %% "scalaprops" % "0.1.15" % "test")
 
 // kind projector compiler plugin
 resolvers += "bintray/non" at "http://dl.bintray.com/non/maven"
-addCompilerPlugin("org.spire-math" %% "kind-projector" % "0.6.3")
+addCompilerPlugin("org.spire-math" %% "kind-projector" % "0.7.0")
 
 testFrameworks += new TestFramework("scalaprops.ScalapropsFramework")
 parallelExecution in Test := false
