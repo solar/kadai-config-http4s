@@ -18,10 +18,6 @@ libraryDependencies ++= Seq(
   "org.http4s" %% "http4s-core" % "0.10.1",
   "com.github.scalaprops" %% "scalaprops" % "0.1.15" % "test")
 
-// kind projector compiler plugin
-resolvers += "bintray/non" at "http://dl.bintray.com/non/maven"
-addCompilerPlugin("org.spire-math" %% "kind-projector" % "0.7.0")
-
 testFrameworks += new TestFramework("scalaprops.ScalapropsFramework")
 parallelExecution in Test := false
 
