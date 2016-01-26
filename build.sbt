@@ -1,6 +1,5 @@
 name := "kadai-config-http4s"
 organization := "org.sazabi"
-version := "0.0.2-SNAPSHOT"
 
 scalaVersion := "2.11.7"
 crossScalaVersions := Seq(scalaVersion.value, "2.10.5")
@@ -15,11 +14,14 @@ scalacOptions ++= Seq(
 
 libraryDependencies ++= Seq(
   "io.atlassian" %% "kadai-config" % "4.0.1",
-  "org.http4s" %% "http4s-core" % "0.10.1",
-  "com.github.scalaprops" %% "scalaprops" % "0.1.15" % "test")
+  "org.http4s" %% "http4s-core" % "0.12.0",
+  "com.github.scalaprops" %% "scalaprops" % "0.1.16" % "test")
 
 testFrameworks += new TestFramework("scalaprops.ScalapropsFramework")
 parallelExecution in Test := false
+
+releasePublishArtifactsAction := PgpKeys.publishSigned.value
+releaseCrossBuild := true
 
 publishTo <<= version { (v: String) =>
   val nexus = "https://oss.sonatype.org/"
