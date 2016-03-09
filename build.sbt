@@ -1,20 +1,24 @@
 name := "kadai-config-http4s"
 organization := "org.sazabi"
 
-scalaVersion := "2.11.7"
-crossScalaVersions := Seq(scalaVersion.value, "2.10.5")
+scalaVersion := "2.11.8"
 
 incOptions := incOptions.value.withNameHashing(true)
+updateOptions := updateOptions.value.withCachedResolution(true)
 
 scalacOptions ++= Seq(
   "-unchecked",
   "-deprecation",
   "-feature",
-  "-language:implicitConversions")
+  "-language:implicitConversions",
+  "-Ybackend:GenBCode",
+  "-Ydelambdafy:method",
+  "-target:jvm-1.8")
 
 libraryDependencies ++= Seq(
   "io.atlassian" %% "kadai-config" % "4.0.1",
-  "org.http4s" %% "http4s-core" % "0.12.0",
+  "org.http4s" %% "http4s-core" % "0.12.3",
+  "org.scala-lang.modules" %% "scala-java8-compat" % "0.7.0",
   "com.github.scalaprops" %% "scalaprops" % "0.1.16" % "test")
 
 testFrameworks += new TestFramework("scalaprops.ScalapropsFramework")
